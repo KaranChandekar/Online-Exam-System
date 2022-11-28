@@ -1,80 +1,70 @@
+import style from "./Dashboard.module.css";
 
-  
-  
-   import style from "./Dashboard.module.css";
+import { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import axios from "axios";
 
-   import {useState  , useEffect} from "react";
-   import { useHistory } from "react-router-dom";
-   import axios from "axios";
+function Dashboard() {
+  const [exam, setExam] = useState("Updating...");
+  const [question, setQuestion] = useState("Updating...");
+  const [user, setUser] = useState("Updating...");
 
-     function Dashboard()
-     {
+  useEffect(() => {
+    async function getAllExam() {
+      let value = await axios.get("http://localhost:3333/exam");
+      setExam("We have total " + value.data.length + " exam");
+    }
+    getAllExam();
 
-          const [exam , setExam] = useState("Updating...");
-          const [question , setQuestion] = useState("Updating...");
-          const [user , setUser] = useState("Updating...");
+    async function getAllQuestions() {
+      let value = await axios.get("http://localhost:3333/question");
+      setQuestion("We have total " + value.data.length + " question");
+    }
+    getAllQuestions();
 
-            useEffect(() => {
-                async function getAllExam(){
-                    let value  = await axios.get("http://localhost:3333/exam");
-                    setExam("We have total " +value.data.length + " exam");
-                }
-                getAllExam();
+    async function getAllUsers() {
+      let value = await axios.get("http://localhost:3333/user");
+      setUser("We have total " + value.data.length + " user");
+    }
+    getAllUsers();
+  });
 
+  let history = useHistory();
 
-                async function getAllQuestions(){
-                    let value  = await axios.get("http://localhost:3333/question");
-                    setQuestion("We have total " +value.data.length + " question");
-                }
-                getAllQuestions();
+  function showExam() {
+    history.push("/AdminDashboard/Exam");
+  }
 
+  function showQuestions() {
+    history.push("/AdminDashboard/Question");
+  }
 
-                async function getAllUsers(){
-                    let value  = await axios.get("http://localhost:3333/user");
-                    setUser("We have total " +value.data.length + " user");
-                }
-                getAllUsers();
-            })
+  function showUsers() {
+    history.push("/AdminDashboard/StudentList");
+  }
 
- 
-             let history = useHistory();
+  return (
+    <>
+      <div id={style.displayHeadingBox}>
+        <h1>Dashboard</h1>
+      </div>
 
-            function showExam(){
-                 history.push("/AdminDashboard/Exam");
-            }
+      <div id={style.box1}>
+        <p id={style.countOfExam}>{exam}</p>
+        <button onClick={showExam}>View Details</button>
+      </div>
 
-            function showQuestions(){
-                history.push("/AdminDashboard/Question");
-            }
+      <div id={style.box2}>
+        <p id={style.countOfQuestion}>{question}</p>
+        <button onClick={showQuestions}>View Details</button>
+      </div>
 
-            function showUsers(){
-                history.push("/AdminDashboard/StudentList");
-            }
+      <div id={style.box3}>
+        <p id={style.countOfUser}>{user}</p>
+        <button onClick={showUsers}>View Details</button>
+      </div>
+    </>
+  );
+}
 
-
-         return(
-             <>
-                           <div id={style.displayHeadingBox}> 
-                               <h1>Dashboard</h1>     
-                           </div>
-
-                            <div id={style.box1}>
-                               <p id={style.countOfExam}>{exam}</p>
-                                   <button onClick={showExam}>View Details</button>
-                            </div>
-
-                              <div id={style.box2}>
-                                  <p  id={style.countOfQuestion}>{question}</p>
-                                   <button onClick={showQuestions}>View Details</button> 
-                              </div>
-
-                              <div id={style.box3}>
-                                  <p id={style.countOfUser}>{user}</p>
-                                    <button onClick={showUsers} >View Details</button>
-                              </div>
-                             
-             </>
-         );
-     }
-
-     export default Dashboard;
+export default Dashboard;

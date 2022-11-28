@@ -1,148 +1,126 @@
-
-  body{
-    margin: 0px;
-    padding: 0px;
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #eff2f5;
 }
 
-#header{
-  background-color: rgba(0, 0, 0, 1);
- float: left;
- height: 50px;
- width: 100%;
+#header {
+  background-color: #fff;
+  float: left;
+  height: 65px;
+  width: 100%;
   position: fixed;
- z-index: 1;
+  z-index: 1;
 }
 
 /* --------------------------------------------------------- */
 
-#headerHeadingBox{
- /* background-color: cyan; */
- float: left;
- height: 50px;
- letter-spacing: 1.4;
- font-size: 20px;  
+#headerHeadingBox {
+  background-color: #202b46;
+  width: 260px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px dashed #33446c;
 }
 
-#headerHeadingBox h3{
-margin: 0px;
-padding-top: 10px;
-padding-left: 10px;
-color: rgba(255, 255, 255, 0.90);
+#headerHeadingBox h3 {
+  font-size: 17px;
+  letter-spacing: 1.4;
+  margin: 0px;
+  color: #fff;
 }
 
 /* --------------------------------------------------------- */
 
-#headerMenuBox{
- /* background-color: red; */
- float:right;
- height: 50px;
- text-align: center;
- margin-right: 40px;
+#headerMenuBox {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 65px;
+  margin-right: 50px;
+  display: flex;
+  align-items: center;
 }
 
-
-#headerMenuBox a{
-text-decoration: none;
-display: inline-block;
-font-size: x-large;
-height: 100%;
-color: rgba(255, 255, 255, 0.6);
-margin-left: 15px;
+#headerMenuBox span {
+  text-decoration: none;
+  color: #3f4254;
+  margin-left: 30px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
 }
 
-#headerMenuBox a span{
-   position: relative;
-   top:10px;
+#headerMenuBox a {
+  text-decoration: none;
 }
 
-
-#headerMenuBox a:hover{
-   color: white;
-   cursor: pointer;
+#headerMenuBox span:hover {
+  color: #3e97ff;
 }
-
 
 /* --------------------------------------------------------- */
 
-#content{
+#content {
   background-color: yellow;
   width: 1340;
 }
 
-#sideMenubar{
-  background-color: black;
-  width: 200px;
-  height: 520px;
-  float: left;
- 
+#sideMenubar {
+  background-color: #202b46;
+  width: 260px;
   position: fixed;
-  top: 50px;
-  height: 100%;
+  top: 65px;
+  height: 100vh;
 }
 
-
-#sideMenubarImageBox{
-  width: 200px;
-  float: left;
-  background-color: black;
-  text-align: center;
-  margin-top: 10px;
-} 
-
-
-#sideMenubarList{
-width: 200px;
-height: 400px;
-float: left;
-font-size: large;
-background-color: black;
-
-margin-top: 20px;
-
+#sideMenubarImageBox {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: center;
 }
 
-
-#sideMenubarList button{
- text-decoration: none;
- display:block;
- margin-bottom: 20px;
- color: rgba(255, 255, 255, 0.6);
- margin-left: 12px;
-
- background-color: transparent;
- outline: 0;
- border: transparent;
-
- font-size: large;
+#sideMenubarImageBox img {
+  width: 25%;
+  margin-left: 30px;
 }
 
-#sideMenubarList button i{
-padding-right: 10px;
+#sideMenubarList {
+  width: 260px;
 }
 
-#sideMenubarList button:hover{
-color: white;
-cursor: pointer;
-
+#sideMenubarList button {
+  text-decoration: none;
+  display: block;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 30px 30px;
+  background-color: transparent;
+  outline: 0;
+  border: transparent;
+  font-size: large;
 }
 
+#sideMenubarList button i {
+  padding-right: 10px;
+}
 
-.removeUnderline{
+#sideMenubarList button:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.removeUnderline {
   text-decoration: none;
 }
 
-
- 
-     
-   
-
-#display{
+#display {
   /* background-color: yellow; */
-  width: 1140px;
-  min-height: 560px;
-  float: left;
-  
-  position: relative;
-  top:50px;
-  left:200px;
-} 
+  min-height: 80vh;
+  width: 80%;
+  position: absolute;
+  top: 65px;
+  right: 0;
+}
