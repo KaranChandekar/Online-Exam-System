@@ -37,11 +37,8 @@ function AdminDashboard() {
             <NavLink exact to="/AdminDashboard">
               {" "}
               <span> Dashboard</span>{" "}
-            </NavLink>
-            <a>
-              {" "}
-              <span onClick={goToAdminLogin}> Logout</span>
-            </a>
+            </NavLink>{" "}
+            <span onClick={goToAdminLogin}> Logout</span>
           </div>
         </div>
 

@@ -29,6 +29,7 @@ function StudentLogin() {
         value.data[i].user_password === user.user_password
       ) {
         setCheck(true);
+        console.log("Success");
         alert("success");
         sessionStorage.setItem("user", user.user_email);
         history.push("/StudentDashboard");

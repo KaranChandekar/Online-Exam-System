@@ -49,19 +49,21 @@ function Dashboard() {
         <h1>Dashboard</h1>
       </div>
 
-      <div id={style.box1}>
-        <p id={style.countOfExam}>{exam}</p>
-        <button onClick={showExam}>View Details</button>
-      </div>
+      <div className={style.boxContainer}>
+        <div id={style.box1}>
+          <p id={style.countOfExam}>{exam}</p>
+          <button onClick={showExam}>View Details</button>
+        </div>
 
-      <div id={style.box2}>
-        <p id={style.countOfQuestion}>{question}</p>
-        <button onClick={showQuestions}>View Details</button>
-      </div>
+        <div id={style.box2}>
+          <p id={style.countOfQuestion}>{question}</p>
+          <button onClick={showQuestions}>View Details</button>
+        </div>
 
-      <div id={style.box3}>
-        <p id={style.countOfUser}>{user}</p>
-        <button onClick={showUsers}>View Details</button>
+        <div id={style.box3}>
+          <p id={style.countOfUser}>{user}</p>
+          <button onClick={showUsers}>View Details</button>
+        </div>
       </div>
     </>
   );
