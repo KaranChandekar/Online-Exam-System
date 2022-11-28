@@ -1,110 +1,120 @@
-
-   body{
-    background-color: ecedf3;
+.signupSection {
+  height: 100vh;
+  width: 100%;
+  background-color: #eff2f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* -------------------------------------------------------------- */
 
+#container {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 0px rgba(76, 87, 125, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s;
+}
 
-   #container{
-       background-color: white;
-       height: 760px;
-       width: 700px;
-
-       margin-left: 300px;
-       float: left;
-       border: 1px solid #2e6da4;
-   }
+#container:hover {
+  transform: scale(1.1);
+}
 
 /* -------------------------------------------------------------- */
 
-      #formHeading{
-           float: left;
-           width: 700px;    
-           text-align: center;
-           border-bottom: 1px solid #2e6da4;
-       }
-
-       #formHeading h1{
-         margin-bottom: 0px;
-         color: #2e6da4;
-     }
-
-     #formHeading p{
-         margin-top: 10px;
-         color: #2e6da4;
-         font-size: 20px;
-     }
-/* ----------------------------------------------------------------------*/
-
- #nameBox,
- #emailBox,
- #passwordBox,
- #confirmPasswordBox{
-      margin-top: 20px;
-      margin-bottom: 20px;
-      float: left;
-      width: 700px;    
-
- }
-
- #nameBox label,
- #emailBox label,
- #passwordBox label,
- #confirmPasswordBox label{
-     margin-left: 10%;
-     margin-bottom: 20px;
-    font-size: 23px;
-    color: #2e6da4;
- }
-
- #nameBox input,
- #emailBox input,
- #passwordBox input,
- #confirmPasswordBox input{
-     font-size: x-large;
-     display: block;
-     width: 80%;
-     margin-left: 10%;
-     margin-top: 10px;
- }
-
-/* ----------------------------------------------------------------------*/
-
- #signup{
-     margin-top: 10px;
-     margin-left: 10%;
-
-     font-size: x-large;
-     text-align: center;
-     width: 80%;
-     height: 40px;
-     color: white;
-     background-color: #2e6da4ee;
-     cursor: pointer;
-
- }
-
-
- #signup:hover{
-     background-color: #2e6da4;
-
- }
-
-/* ----------------------------------------------------------------------*/
-
-#login{
-    margin-top: 20px;
-    font-size: 16px;
-    text-align: center;
+#formHeading {
+  text-align: center;
+  margin-bottom: 50px;
+  width: 100%;
 }
 
+#formHeading h1 {
+  margin-bottom: 0px;
+  color: #2e6da4;
+}
 
- #login a{
-     text-decoration: none;
-     color: #2e6da4;
- }
+#formHeading p {
+  margin-top: 10px;
+  color: #2e6da4;
+  font-size: 20px;
+}
+/* ----------------------------------------------------------------------*/
 
- #login a:hover{
-     text-decoration: underline;
- }
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form input {
+  padding: 10px 0;
+  width: 350px;
+  margin-bottom: 20px;
+  border: none;
+  font-size: 20px;
+  color: #2e6da4;
+  border-bottom: 1px solid #2e6da4;
+}
+
+.form input:focus {
+  outline: none;
+}
+
+.form input::placeholder {
+  font-size: 20px;
+  color: #2e6da4;
+}
+
+/* ----------------------------------------------------------------------*/
+
+#signup {
+  font-size: large;
+  text-align: center;
+  color: white;
+  background-color: #2e6da4ee;
+  cursor: pointer;
+  border: none;
+  margin-top: 10px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+#signup:hover {
+  background-color: #2e6da4;
+}
+
+/* ----------------------------------------------------------------------*/
+
+#login {
+  margin-top: 20px;
+  font-size: 16px;
+  text-align: center;
+}
+
+#login a {
+  text-decoration: none;
+  color: #2e6da4;
+}
+
+#login a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 500px) {
+  #container {
+    width: 90%;
+    padding: 40px 10px;
+  }
+
+  .form input {
+    width: 100%;
+  }
+
+  #container:hover {
+    transform: none;
+  }
+}

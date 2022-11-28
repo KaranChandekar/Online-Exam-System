@@ -40,75 +40,61 @@ function StudentSignup() {
   }
 
   return (
-    <div id={style.container}>
-      <div id={style.formHeading}>
-        <h1>Student Signup</h1>
-        <p>Please complete the form below to register with us</p>
-      </div>
+    <section className={style.signupSection}>
+      <div id={style.container}>
+        <div id={style.formHeading}>
+          <h1>Student Signup</h1>
+          <p>Please complete the form below to register with us</p>
+        </div>
 
-      <div id={style.nameBox}>
-        <label htmlFor="name">
-          Name
+        <form className={style.form}>
           <input
+            placeholder="Name"
             onChange={(e) => onTextFieldChange(e)}
             type="text"
             name="user_name"
             required
           />
-        </label>
-      </div>
 
-      <div id={style.emailBox}>
-        <label htmlFor="email">
-          {" "}
-          Email
           <input
+            placeholder="Email"
             onChange={(e) => onTextFieldChange(e)}
             type="text"
             name="user_email"
             required
           />
-        </label>
-      </div>
 
-      <div id={style.passwordBox}>
-        <label htmlFor="password">
-          {" "}
-          Password
           <input
+            placeholder="Password"
             onChange={(e) => onTextFieldChange(e)}
             type="password"
             name="user_password"
             required
           />
-        </label>
-      </div>
 
-      <div id={style.confirmPasswordBox}>
-        <label htmlFor="confirmPassword">
-          Confirm Password
           <input
+            placeholder="Confirm Password"
             onChange={(e) => handlePassword(e)}
             type="password"
             name="confirmPassword"
             required
           />
-        </label>
-      </div>
 
-      {/* <button id={style.signup} onclick="signup()">Sign Up</button> */}
-      <button id={style.signup} onClick={handleSignup}>
-        Sign Up
-      </button>
+          {/* <button id={style.signup} onclick="signup()">Sign Up</button> */}
+          <button id={style.signup} onClick={handleSignup}>
+            Sign Up
+          </button>
+        </form>
 
-      <div id={style.login}>
-        Have a Account?{" "}
-        <NavLink exact to="/StudentLogin">
-          {" "}
-          Log in
-        </NavLink>
+        <div id={style.login}>
+          Have a Account?{" "}
+          <NavLink exact to="/StudentLogin">
+            {" "}
+            Log in
+          </NavLink>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 
