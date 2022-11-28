@@ -1,7 +1,5 @@
 import style from "./StudentLogin.module.css";
-
 import { NavLink, useHistory } from "react-router-dom";
-
 import { useState } from "react";
 import axios from "axios";
 
@@ -40,53 +38,45 @@ function StudentLogin() {
   }
 
   return (
-    <div id={style.container}>
-      <div id={style.containerHeadingBox}>
+    <section className={style.loginSection}>
+      <div id={style.container}>
         <h1>Student Login</h1>
-      </div>
 
-      <div id={style.emailBox}>
-        <label htmlFor="email">
-          {" "}
-          Email
+        <form className={style.form}>
           <input
+            placeholder="Email"
             name="user_email"
             onChange={(e) => onTextFieldChange(e)}
             type="text"
             id={style.email}
           />
-        </label>
-      </div>
 
-      <div id={style.passwordBox}>
-        <label htmlFor="password">
-          {" "}
-          Password
           <input
+            placeholder="Password"
             name="user_password"
             onChange={(e) => onTextFieldChange(e)}
             type="password"
             id={style.password}
           />
-        </label>
-      </div>
 
-      <button id={style.login} onClick={handleLogin}>
-        Login
-      </button>
+          <button id={style.login} onClick={handleLogin}>
+            Login
+          </button>
+        </form>
 
-      <div id={style.signup}>
-        New to Portal?{" "}
-        <NavLink exact to="/StudentSignup">
-          {" "}
-          Register
-        </NavLink>
-        <NavLink id={style.goBackLink} exact to="/">
-          {" "}
-          Go Back
-        </NavLink>
+        <div id={style.signup}>
+          New to Portal?{" "}
+          <NavLink exact to="/StudentSignup">
+            {" "}
+            Register
+          </NavLink>
+          <NavLink id={style.goBackLink} exact to="/">
+            {" "}
+            Go Back
+          </NavLink>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 
