@@ -81,12 +81,14 @@ function Subject() {
           {/* Add Subject */}
 
           <div id={style.addBox} style={display}>
-            <label htmlFor="">Enter Subject </label>
-            <input
-              onChange={(e) => handleInput(e)}
-              type="text"
-              placeholder="Enter Subject name"
-            />
+            <div id={style.inputWrapper}>
+              <label htmlFor="">Enter Subject </label>
+              <input
+                onChange={(e) => handleInput(e)}
+                type="text"
+                placeholder="Enter Subject name"
+              />
+            </div>
 
             <div id={style.buttonBox}>
               <button onClick={handleAddNewSubject}>Add</button>
